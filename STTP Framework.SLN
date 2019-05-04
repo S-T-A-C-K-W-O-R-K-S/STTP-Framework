@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.28803.352
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "meddbase", "meddbase\meddbase.csproj", "{61203BDE-5672-457E-9E2A-6E019C87A12F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helper Methods", "Helper Methods\Helper Methods.csproj", "{07CB48EF-0382-476F-A241-7806B7F32AC7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{61203BDE-5672-457E-9E2A-6E019C87A12F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61203BDE-5672-457E-9E2A-6E019C87A12F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61203BDE-5672-457E-9E2A-6E019C87A12F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07CB48EF-0382-476F-A241-7806B7F32AC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07CB48EF-0382-476F-A241-7806B7F32AC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07CB48EF-0382-476F-A241-7806B7F32AC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07CB48EF-0382-476F-A241-7806B7F32AC7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
