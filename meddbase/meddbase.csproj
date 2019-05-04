@@ -1,8 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.SDK">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-    <RootNamespace>Test_Harness</RootNamespace>
+    <RootNamespace>meddbase</RootNamespace>
   </PropertyGroup>
 
 </Project>

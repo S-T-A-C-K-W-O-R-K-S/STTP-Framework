@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Test_Harness
+namespace meddbase
 {
     public class Class
     {
