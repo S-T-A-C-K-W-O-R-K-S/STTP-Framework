@@ -1,2 +1,2 @@
 # JÖRMUNGANDR
-When the Ouroboros breaks, Ragnarök begins on production servers.
+When the ouroboros breaks, Ragnarök begins on production servers.
