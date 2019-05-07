@@ -1,0 +1,1 @@
+pytest --env dev --html="test_results\results.html" --junitxml="test_results\results.xml" -m "not debug" -v -rxXs

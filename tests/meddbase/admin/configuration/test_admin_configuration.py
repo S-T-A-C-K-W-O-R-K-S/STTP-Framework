@@ -1,10 +1,10 @@
 from pytest import mark
 
+
 @mark.smoke
 @mark.admin
 @mark.configuration
 class ChamberConfigurationTestSuite:
-    
     @mark.chargeable_features
     def test_admin_configuration_chargeable_features(self):
         assert True
