@@ -7,7 +7,7 @@ using System.Text;
 namespace meddbase
 {
     [TestFixture]
-    class AssertLogin
+    class StartPage
     {
         readonly IWebDriver driver;
 
@@ -21,7 +21,7 @@ namespace meddbase
         [Test]
         public void RunTest()
         {
-            Console.WriteLine("This Is AssertLogin.CS");
+            Assert.IsTrue(true);
         }
 
         [TearDown]

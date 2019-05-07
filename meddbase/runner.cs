@@ -6,7 +6,7 @@ namespace meddbase
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("This Is Runner.CS");
+            Console.WriteLine("...");
         }
     }
 }
