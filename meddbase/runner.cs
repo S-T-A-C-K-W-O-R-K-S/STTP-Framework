@@ -2,7 +2,7 @@
 
 namespace meddbase
 {
-    class Run
+    class Runner
     {
         static void Main(string[] args)
         {

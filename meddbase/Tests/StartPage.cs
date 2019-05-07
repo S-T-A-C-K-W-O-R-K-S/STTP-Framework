@@ -1,15 +1,12 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace meddbase
 {
     [TestFixture]
     class StartPage
     {
-        readonly IWebDriver driver;
+        IWebDriver driver;
 
         [SetUp]
         public void Initialize()
