@@ -1,2 +1,2 @@
-# STTP Framework
-Straight-To-The-Point Test Automation Framework
+# Project Ouroboros
+A Straight-To-The-Point Test Automation Framework
