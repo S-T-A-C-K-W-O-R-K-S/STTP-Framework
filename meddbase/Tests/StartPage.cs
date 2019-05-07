@@ -18,7 +18,7 @@ namespace meddbase
         [Test]
         public void RunTest()
         {
-            Assert.IsTrue(true);
+            Assert.Pass();
         }
 
         [TearDown]
