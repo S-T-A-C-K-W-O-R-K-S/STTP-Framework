@@ -8,44 +8,46 @@ namespace meddbase
 {
     class Global
     {
-        public static void InitializeDriver(IWebDriver driver, string browser)
+        public static IWebDriver InitializeDriver(string browser)
         {
+            IWebDriver webdriver;
+
             switch (browser)
             {
                 case "firefox":
-                    driver = new FirefoxDriver(AppDomain.CurrentDomain.BaseDirectory);
-                    driver.Manage().Window.Maximize();
-                    break;
+                    webdriver = new FirefoxDriver(AppDomain.CurrentDomain.BaseDirectory);
+                    webdriver.Manage().Window.Maximize();
+                    return webdriver;
                 case "chrome":
-                    driver = new ChromeDriver(AppDomain.CurrentDomain.BaseDirectory);
-                    driver.Manage().Window.Maximize();
-                    break;
+                    webdriver = new ChromeDriver(AppDomain.CurrentDomain.BaseDirectory);
+                    webdriver.Manage().Window.Maximize();
+                    return webdriver;
                 case "edge":
-                    driver = new EdgeDriver(AppDomain.CurrentDomain.BaseDirectory);
-                    driver.Manage().Window.Maximize();
-                    break;
+                    webdriver = new EdgeDriver(AppDomain.CurrentDomain.BaseDirectory);
+                    webdriver.Manage().Window.Maximize();
+                    return webdriver;
                 default:
                     throw new Exception("IWebDriver Uninitialized");
             }
         }
 
-        public static void LogIn(IWebDriver driver, string system, string username, string password)
+        public static void TestSetup(IWebDriver webdriver, string system, string username, string password)
         {
             string endpoint = $"https://{system}.meddbase.com/em.aspx/?p=Login/Password&direct=true";
-            driver.Navigate().GoToUrl(endpoint);
+            webdriver.Navigate().GoToUrl(endpoint);
 
-            IWebElement UsernameInput = driver.FindElement(By.CssSelector("#MasterPage_UserName"));
-            IWebElement PasswordInput = driver.FindElement(By.CssSelector("#LoginPasswordTextbox > div > input[type=password]"));
-            IWebElement LoginButton = driver.FindElement(By.CssSelector("#LoginButtonContainer > input"));
+            IWebElement UsernameInput = webdriver.FindElement(By.CssSelector("#MasterPage_UserName"));
+            IWebElement PasswordInput = webdriver.FindElement(By.CssSelector("#LoginPasswordTextbox > div > input[type=password]"));
+            IWebElement LoginButton = webdriver.FindElement(By.CssSelector("#LoginButtonContainer > input"));
 
             UsernameInput.SendKeys(username);
             PasswordInput.SendKeys(password);
             LoginButton.Click();
         }
 
-        public static void TerminateDriver(IWebDriver driver)
+        public static void TerminateDriver(IWebDriver webdriver)
         {
-            driver.Quit();
+            webdriver.Quit();
         }
     }
 }

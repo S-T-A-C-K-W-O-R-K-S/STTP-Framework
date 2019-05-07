@@ -6,19 +6,18 @@ namespace meddbase
     [TestFixture]
     class StartPage
     {
-        IWebDriver driver;
+        readonly IWebDriver driver = Global.InitializeDriver("firefox");
 
         [SetUp]
         public void Initialize()
         {
-            Global.InitializeDriver(driver, "firefox");
-            Global.LogIn(driver, "system10", "BRL.Automation", "aut0mati0n");
+            Global.TestSetup(driver, "system10", "BRL.Automation", "aut0mati0n");
         }
 
         [Test]
-        public void RunTest()
+        public void AssertLogin()
         {
-            Assert.Pass();
+            Assert.AreEqual(driver.Title, "Start Page");
         }
 
         [TearDown]
