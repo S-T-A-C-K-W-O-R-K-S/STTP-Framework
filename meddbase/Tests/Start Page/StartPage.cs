@@ -11,7 +11,7 @@ namespace meddbase
         [SetUp]
         public void Initialize()
         {
-            Global.TestSetup(driver, "system10", "BRL.Automation", "aut0mati0n");
+            Global.TestSetup(driver, "system10", Global.GetCredentials()[0].Item1, Global.GetCredentials()[0].Item2);
         }
 
         [Test]

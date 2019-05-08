@@ -1,0 +1,16 @@
+{
+  "logins": [
+    {
+      "username": "user-one",
+      "password": "password-one"
+    },
+    {
+      "username": "user-two",
+      "password": "password-two"
+    },
+    {
+      "username": "user-three",
+      "password": "password-three"
+    }
+  ]
+}
