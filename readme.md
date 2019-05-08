@@ -1,2 +1,2 @@
-# Project Ouroboros
-A Straight-To-The-Point Test Automation Framework
+# JÖRMUNGANDR
+When the ouroboros breaks, Ragnarök begins on production servers.
