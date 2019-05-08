@@ -1,11 +1,8 @@
-﻿using Newtonsoft.Json;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
 using System;
-using System.Collections.Generic;
-using System.IO;
 
 namespace meddbase
 {
@@ -32,23 +29,6 @@ namespace meddbase
                 default:
                     throw new Exception("IWebDriver Uninitialized");
             }
-        }
-
-        public static List<Tuple<string, string>> GetCredentials()
-        {
-            List<Tuple<string, string>> credentials = new List<Tuple<string, string>>();
-
-            string workingDirectory = Environment.CurrentDirectory;
-            string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
-
-            dynamic json = JsonConvert.DeserializeObject(File.ReadAllText(projectDirectory + "\\Test Data\\dataset.json"));
-
-            foreach (dynamic login in json.logins)
-            {
-                credentials.Add(Tuple.Create(login.username.ToString(), login.password.ToString()));
-            }
-
-            return credentials;
         }
 
         public static void TestSetup(IWebDriver webdriver, string system, string username, string password)
