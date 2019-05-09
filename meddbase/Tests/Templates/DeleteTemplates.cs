@@ -22,6 +22,15 @@ namespace meddbase
             Assert.AreEqual(driver.Title, "Templates");
         }
 
+        [Test, Order(2)] // this needs to be the last one, after deleting all the documents under the document type
+        public void DeleteDocumentType()
+        {
+            driver.FindElement(By.XPath("//div[contains(text(), 'AUTOMATION')]")).Click();
+            driver.FindElement(By.XPath("//div[contains(text(), 'Delete type')]")).Click();
+            driver.FindElement(By.CssSelector("input.MessageBoxButton[value='Yes']")).Click();
+            Assert.IsFalse(driver.FindElement(By.XPath("//div[contains(text(), 'AUTOMATION')]")).Enabled);
+        }
+
         [OneTimeTearDown]
         public void Terminate()
         {

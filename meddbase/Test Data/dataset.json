@@ -1,8 +1,8 @@
 {
   "logins": [
     {
-      "username": "BRL.Automation",
-      "password": "aut0mati0n"
+      "username": "user-one",
+      "password": "password-one"
     },
     {
       "username": "user-two",
