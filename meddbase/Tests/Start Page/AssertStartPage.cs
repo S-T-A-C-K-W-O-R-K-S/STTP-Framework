@@ -1,17 +1,18 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
+using Helpers;
 
 namespace meddbase
 {
     [TestFixture]
-    class StartPage
+    class AssertStartPage
     {
-        readonly IWebDriver driver = Global.InitializeDriver("firefox");
+        readonly IWebDriver driver = WebDriverHelpers.InitializeDriver("firefox");
 
         [SetUp]
         public void Initialize()
         {
-            Global.TestSetup(driver, "system10", TestData.GetCredentials()[0].Item1, TestData.GetCredentials()[0].Item2);
+            WebDriverHelpers.TestSetup(driver, "system10", TestDataHelpers.GetCredentials()[0].Item1, TestDataHelpers.GetCredentials()[0].Item2);
         }
 
         [Test]
@@ -23,7 +24,7 @@ namespace meddbase
         [TearDown]
         public void Terminate()
         {
-            Global.TerminateDriver(driver);
+            WebDriverHelpers.TerminateDriver(driver);
         }
     }
 }

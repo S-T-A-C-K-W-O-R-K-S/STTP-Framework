@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace meddbase
+namespace Helpers
 {
-    class TestData
+    class TestDataHelpers
     {
         public class TestDataRootObject
         {
