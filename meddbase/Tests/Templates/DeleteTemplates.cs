@@ -12,7 +12,7 @@ namespace meddbase
         [OneTimeSetUp]
         public void Initialize()
         {
-            Global.TestSetup(driver, "system10", Global.GetCredentials()[0].Item1, Global.GetCredentials()[0].Item2);
+            Global.TestSetup(driver, Global.GetSystems()[0], Global.GetCredentials()[0].Item1, Global.GetCredentials()[0].Item2);
         }
 
         [Test, Order(1)]
@@ -22,14 +22,13 @@ namespace meddbase
             Assert.AreEqual(driver.Title, "Templates");
         }
 
-        // This test needs to run last, after deleting all the documents of this document type.
         [Test, Order(2)]
         public void DeleteDocumentType()
         {
             driver.FindElement(By.XPath("//div[contains(text(), 'AUTOMATION')]")).Click();
             driver.FindElement(By.XPath("//div[contains(text(), 'Delete type')]")).Click();
             driver.FindElement(By.CssSelector("input.MessageBoxButton[value='Yes']")).Click();
-            Assert.IsFalse(driver.FindElement(By.XPath("//div[contains(text(), 'AUTOMATION')]")).Enabled);
+            Assert.IsFalse(driver.FindElement(By.XPath("//div[contains(text(), 'AUTOMATION')]")).Displayed);
         }
 
         [OneTimeTearDown]

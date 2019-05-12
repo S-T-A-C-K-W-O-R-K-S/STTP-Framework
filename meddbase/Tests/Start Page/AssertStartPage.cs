@@ -12,7 +12,7 @@ namespace meddbase
         [SetUp]
         public void Initialize()
         {
-            Global.TestSetup(driver, "system10", Global.GetCredentials()[0].Item1, Global.GetCredentials()[0].Item2);
+            Global.TestSetup(driver, Global.GetSystems()[0], Global.GetCredentials()[0].Item1, Global.GetCredentials()[0].Item2);
         }
 
         [Test]

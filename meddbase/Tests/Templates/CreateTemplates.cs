@@ -34,6 +34,7 @@ namespace meddbase
             GetNewButton().Click();
             driver.FindElement(By.XPath("//div[contains(text(), 'Document type')]")).Click();
             driver.FindElement(By.CssSelector("input#TypeName")).SendKeys("AUTOMATION");
+            Global.SetDropdownOption(Global.GetDropdown(driver, "Policy"), "Medical Document");
             driver.FindElement(By.CssSelector("input[value='Save']")).Click();
             Assert.IsTrue(driver.FindElement(By.XPath("//div[contains(text(), 'AUTOMATION')]")).Enabled);
         }
