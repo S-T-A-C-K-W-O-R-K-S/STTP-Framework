@@ -7,22 +7,23 @@ namespace meddbase
     [TestFixture]
     class DeleteTemplates
     {
-        readonly IWebDriver driver = WebDriverHelpers.InitializeDriver("firefox");
+        readonly IWebDriver driver = Global.InitializeDriver("firefox");
 
         [OneTimeSetUp]
         public void Initialize()
         {
-            WebDriverHelpers.TestSetup(driver, "system10", TestDataHelpers.GetCredentials()[0].Item1, TestDataHelpers.GetCredentials()[0].Item2);
+            Global.TestSetup(driver, "system10", Global.GetCredentials()[0].Item1, Global.GetCredentials()[0].Item2);
         }
 
         [Test, Order(1)]
         public void AssertTemplatesPage()
         {
-            StartPageHelpers.GetStartPageTile(driver, "Templates").Click();
+            Global.GetStartPageTile(driver, "Templates").Click();
             Assert.AreEqual(driver.Title, "Templates");
         }
 
-        [Test, Order(2)] // this needs to be the last one, after deleting all the documents under the document type
+        // This test needs to run last, after deleting all the documents of this document type.
+        [Test, Order(2)]
         public void DeleteDocumentType()
         {
             driver.FindElement(By.XPath("//div[contains(text(), 'AUTOMATION')]")).Click();
@@ -34,7 +35,7 @@ namespace meddbase
         [OneTimeTearDown]
         public void Terminate()
         {
-            WebDriverHelpers.TerminateDriver(driver);
+            Global.TerminateDriver(driver);
         }
     }
 }

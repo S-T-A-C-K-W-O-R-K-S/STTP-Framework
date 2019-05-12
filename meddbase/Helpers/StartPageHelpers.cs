@@ -2,7 +2,7 @@
 
 namespace Helpers
 {
-    class StartPageHelpers
+    partial class Global
     {
         public static IWebElement GetStartPageTile(IWebDriver webdriver, string title)
         {

@@ -7,12 +7,12 @@ namespace meddbase
     [TestFixture]
     class AssertStartPage
     {
-        readonly IWebDriver driver = WebDriverHelpers.InitializeDriver("firefox");
+        readonly IWebDriver driver = Global.InitializeDriver("firefox");
 
         [SetUp]
         public void Initialize()
         {
-            WebDriverHelpers.TestSetup(driver, "system10", TestDataHelpers.GetCredentials()[0].Item1, TestDataHelpers.GetCredentials()[0].Item2);
+            Global.TestSetup(driver, "system10", Global.GetCredentials()[0].Item1, Global.GetCredentials()[0].Item2);
         }
 
         [Test]
@@ -24,7 +24,7 @@ namespace meddbase
         [TearDown]
         public void Terminate()
         {
-            WebDriverHelpers.TerminateDriver(driver);
+            Global.TerminateDriver(driver);
         }
     }
 }

@@ -7,7 +7,7 @@ namespace meddbase
     [TestFixture]
     class CreateTemplates
     {
-        readonly IWebDriver driver = WebDriverHelpers.InitializeDriver("firefox");
+        readonly IWebDriver driver = Global.InitializeDriver("firefox");
 
         IWebElement GetNewButton()
         {
@@ -18,13 +18,13 @@ namespace meddbase
         [OneTimeSetUp]
         public void Initialize()
         {
-            WebDriverHelpers.TestSetup(driver, "system10", TestDataHelpers.GetCredentials()[0].Item1, TestDataHelpers.GetCredentials()[0].Item2);
+            Global.TestSetup(driver, Global.GetSystems()[0], Global.GetCredentials()[0].Item1, Global.GetCredentials()[0].Item2);
         }
 
         [Test, Order(1)]
         public void AssertTemplatesPage()
         {
-            StartPageHelpers.GetStartPageTile(driver, "Templates").Click();
+            Global.GetStartPageTile(driver, "Templates").Click();
             Assert.AreEqual(driver.Title, "Templates");
         }
 
@@ -41,7 +41,7 @@ namespace meddbase
         [OneTimeTearDown]
         public void Terminate()
         {
-            WebDriverHelpers.TerminateDriver(driver);
+            Global.TerminateDriver(driver);
         }
     }
 }

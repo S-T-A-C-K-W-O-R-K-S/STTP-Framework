@@ -1,4 +1,5 @@
 {
+  "comment": "this file should always be defined in .gitignore for exclusion from the repository",
   "logins": [
     {
       "username": "user-one",
@@ -12,5 +13,10 @@
       "username": "user-three",
       "password": "password-three"
     }
+  ],
+  "systems": [
+    "system10",
+    "rc",
+    "testb1"
   ]
 }

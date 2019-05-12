@@ -6,8 +6,9 @@ using System;
 
 namespace Helpers
 {
-    class WebDriverHelpers
+    partial class Global
     {
+            // In the final version of the code, this needs to be a "foreach webdriver" statement.
             public static IWebDriver InitializeDriver(string browser)
             {
                 IWebDriver webdriver;
