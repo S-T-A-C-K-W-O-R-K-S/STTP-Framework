@@ -51,5 +51,18 @@ namespace meddbase.Helpers
             webdriver.Close();
             webdriver.Quit();
         }
+
+        public static bool IsDisplayed(IWebElement element)
+        {
+            try
+            {
+                return element.Displayed;
+            }
+
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

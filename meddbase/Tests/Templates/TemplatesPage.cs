@@ -20,7 +20,7 @@ namespace meddbase.Tests.Templates
             [OneTimeSetUp]
             public void Initialize()
             {
-                Global.TestSetup(driver, Global.GetSystems()[0], Global.GetCredentials()[0].Item1, Global.GetCredentials()[0].Item2);
+                Global.TestSetup(driver, Global.GetSystems()[0], Global.GetCredentials()[3].Item1, Global.GetCredentials()[3].Item2);
             }
 
             [Test, Order(1)]
@@ -56,7 +56,7 @@ namespace meddbase.Tests.Templates
             [OneTimeSetUp]
             public void Initialize()
             {
-                Global.TestSetup(driver, Global.GetSystems()[0], Global.GetCredentials()[0].Item1, Global.GetCredentials()[0].Item2);
+                Global.TestSetup(driver, Global.GetSystems()[0], Global.GetCredentials()[3].Item1, Global.GetCredentials()[3].Item2);
             }
 
             [Test, Order(1)]
@@ -72,7 +72,7 @@ namespace meddbase.Tests.Templates
                 driver.FindElement(By.XPath("//div[contains(text(), 'AUTOMATION')]")).Click();
                 driver.FindElement(By.XPath("//div[contains(text(), 'Delete type')]")).Click();
                 driver.FindElement(By.CssSelector("input.MessageBoxButton[value='Yes']")).Click();
-                Assert.IsFalse(driver.FindElement(By.XPath("//div[contains(text(), 'AUTOMATION')]")).Displayed);
+                Assert.IsFalse(Global.IsDisplayed(driver.FindElement(By.XPath("//div[contains(text(), 'AUTOMATION')]"))));
             }
 
             [OneTimeTearDown]
