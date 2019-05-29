@@ -1,6 +1,6 @@
 ﻿using OpenQA.Selenium;
 
-namespace Helpers
+namespace meddbase.Helpers
 {
     partial class Global
     {

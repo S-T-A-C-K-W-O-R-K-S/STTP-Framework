@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using OpenQA.Selenium.Support.UI;
 
-namespace Helpers
+namespace meddbase.Helpers
 {
     partial class Global
     {

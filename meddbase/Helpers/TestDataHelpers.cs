@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace Helpers
+namespace meddbase.Helpers
 {
     partial class Global
     {

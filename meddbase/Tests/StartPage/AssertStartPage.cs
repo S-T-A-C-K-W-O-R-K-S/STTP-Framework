@@ -1,8 +1,8 @@
 ﻿using NUnit.Framework;
 using OpenQA.Selenium;
-using Helpers;
+using meddbase.Helpers;
 
-namespace meddbase
+namespace meddbase.Tests.StartPage
 {
     [TestFixture]
     class AssertStartPage

@@ -4,7 +4,7 @@ using OpenQA.Selenium.Edge;
 using OpenQA.Selenium.Firefox;
 using System;
 
-namespace Helpers
+namespace meddbase.Helpers
 {
     partial class Global
     {
