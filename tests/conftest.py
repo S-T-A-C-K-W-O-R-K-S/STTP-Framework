@@ -1,5 +1,6 @@
 from pytest import fixture
 from config import Config
+from selenium import webdriver
 
 
 def pytest_addoption(parser):
@@ -15,3 +16,10 @@ def env(request):
 def custom_config(env):
     cfg = Config(env)
     return cfg
+
+@fixture(params=[webdriver.Chrome, webdriver.Firefox])
+def browser(request):
+    driver = request.param
+    driver_instance = driver()
+    yield driver_instance
+    driver_instance.quit()
