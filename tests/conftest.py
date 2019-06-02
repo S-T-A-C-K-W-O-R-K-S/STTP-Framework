@@ -1,11 +1,12 @@
+#region Imports
 import json 
-
 
 from pytest import fixture
 from config import Config
 from selenium import webdriver
+#endregion
 
-
+#region Test Data
 data_path = '../test_data/meddbase.json'
 
 def load_test_data(path):
@@ -17,8 +18,9 @@ def load_test_data(path):
 def test_data(request):
     data = request.param
     return data
+#endregion
 
-
+#region Environment Setup
 def pytest_addoption(parser):
     parser.addoption("--env", action="store", help="environment to run tests against")
 
@@ -30,11 +32,13 @@ def env(request):
 def custom_config(env):
     cfg = Config(env)
     return cfg
+#endregion
 
-
+#region WebDriver
 @fixture(params=[webdriver.Chrome, webdriver.Firefox])
 def browser(request):
     driver = request.param
     driver_instance = driver()
     yield driver_instance
     driver_instance.quit()
+#endregion

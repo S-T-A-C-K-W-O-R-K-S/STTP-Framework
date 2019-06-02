@@ -1,6 +1,8 @@
+#region Imports
 from pytest import mark
+#endregion
 
-
+#region Tests
 @mark.smoke
 @mark.admin
 @mark.configuration
@@ -17,3 +19,4 @@ class ChamberConfigurationTestSuite:
     @mark.advanced_configuration
     def test_admin_configuration_advanced(self):
         assert True
+#endregion
