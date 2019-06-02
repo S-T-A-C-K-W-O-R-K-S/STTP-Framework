@@ -1,5 +1,6 @@
 [
-	"",
-	"",
-	""
+"systems": [
+	"https://system7.meddbase.com/em.aspx/?p=Login/Password&direct=True",
+	"https://system10.meddbase.com/em.aspx/?p=Login/Password&direct=True"
+	]
 ]
