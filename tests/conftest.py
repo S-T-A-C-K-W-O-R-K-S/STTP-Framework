@@ -1,5 +1,6 @@
 import json 
 
+
 from pytest import fixture
 from config import Config
 from selenium import webdriver
@@ -11,6 +12,12 @@ def load_test_data(path):
     with open(path) as data_file:
         data = json.load(data_file)
         return data
+
+@fixture(params=load_test_data(data_path))
+def test_data(request):
+    data = request.param
+    return data
+
 
 def pytest_addoption(parser):
     parser.addoption("--env", action="store", help="environment to run tests against")
@@ -24,14 +31,10 @@ def custom_config(env):
     cfg = Config(env)
     return cfg
 
+
 @fixture(params=[webdriver.Chrome, webdriver.Firefox])
 def browser(request):
     driver = request.param
     driver_instance = driver()
     yield driver_instance
     driver_instance.quit()
-
-@fixture(params=load_test_data(data_path))
-def test_data(request):
-    data = request.param
-    return data
