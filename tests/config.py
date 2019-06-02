@@ -1,3 +1,4 @@
+#region Configuration
 class Config:
     def __init__(self, env):
         supported_envs = ["dev", "stg", "prod"]
@@ -16,3 +17,4 @@ class Config:
             "stg": "https://rc.meddbase.com/em.aspx/?p=Login/Password&direct=True",
             "prod": "https://system10.meddbase.com/em.aspx/?p=Login/Password&direct=True",
         }[env]
+#endregion
